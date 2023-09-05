@@ -3,7 +3,9 @@
 {% block contents %}
     <p>대여리스트</p>
     {% for rental in rental_books %}
-        <a href="{% url 'books:book_detail' rental.book.id %}">{{ rental.book.title }}</a>
-        {{ rental.rental_date }} ~ {{ rental.return_date }}
+        {% if not rental.book_return %}
+            <a href="{% url 'books:book_detail' rental.book.id %}">{{ rental.book.title }}</a>
+            {{ rental.rental_date }} ~ {{ rental.return_date }}
+        {% endif %}
     {% endfor %}
 {% endblock contents %}

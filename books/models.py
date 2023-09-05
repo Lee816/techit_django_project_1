@@ -27,6 +27,7 @@ class Books_rental(models.Model):
     return_date = models.DateField(default=timezone.now()+timezone.timedelta(weeks=1))
     book = models.ForeignKey(Book, related_name='rentals', on_delete=models.CASCADE)
     user = models.ForeignKey(User, related_name='rental_books', on_delete=models.CASCADE)
+    book_return = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.user} rental "{self.book}"'

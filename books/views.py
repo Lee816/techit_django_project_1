@@ -1,8 +1,8 @@
 from django.urls import reverse_lazy
 from django.views import generic
-from django.shortcuts import get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 
 from .models import Book, Books_rental
 
@@ -52,3 +52,19 @@ def BookRent(request, book_id):
             return redirect('books:books_list')
         else:
             raise ValueError('대여 불가능')
+
+@login_required
+@permission_required('books.delete_Books_rental')
+def BookReturn(request, book_id):
+    if request.method == 'POST':
+        book = get_object_or_404(Book, id=book_id)
+        rental_book = get_object_or_404(Books_rental, book=book, user=request.user)
+        book.stock += 1
+        rental_book.delete()
+        return redirect('books:books_list')
+
+@login_required
+def BookReturnList(request):
+    rental_books = Books_rental.objects.filter(book_return=True)
+    return render(request, 'books/return_list.html', {'rental_books':rental_books})
+    
