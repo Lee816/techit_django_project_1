@@ -13,7 +13,7 @@ class Category(models.Model):
 
 class Book(models.Model):
     category = models.ForeignKey(Category, related_name='books',on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200,unique=True)
     author = models.CharField(max_length=200)
     publisher = models.CharField(max_length=200)
     stock = models.IntegerField(default=0)
