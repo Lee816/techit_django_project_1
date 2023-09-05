@@ -1,6 +1,7 @@
+from django.urls import reverse_lazy
 from django.views import generic
 from django.shortcuts import get_object_or_404, redirect
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.decorators import login_required
 
 from .models import Book, Books_rental
@@ -19,6 +20,15 @@ class BookDetail(LoginRequiredMixin, generic.DetailView):
     context_object_name = 'book'
     template_name = 'books/book_detail.html'
     redirect_field_name = 'accounts/login'
+    
+class BookCreate(LoginRequiredMixin, PermissionRequiredMixin, generic.CreateView):
+    model = Book
+    fields = '__all__'
+    context_object_name = 'form'
+    redirect_field_name = 'accounts:login'
+    template_name = 'books/book_create.html'
+    permission_required = 'books.add_book'
+    success_url = reverse_lazy('books:books_list')
     
 class RentalBooksList(LoginRequiredMixin, generic.ListView):
     model = Books_rental

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+    <p>책 등록</p>
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="Create"></p>
+    </form>
+{% endblock contents %}
+
