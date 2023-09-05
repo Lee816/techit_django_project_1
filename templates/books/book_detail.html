@@ -3,4 +3,5 @@
 {% block contents %}
     <h1>{{ book.title }}</h1>
     <p>{{ book.summary }}</p>
+    <a href="{% url "books:book_rent" book.id %}">Rental</a>
 {% endblock contents %}
