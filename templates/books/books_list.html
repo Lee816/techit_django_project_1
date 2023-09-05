@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+    <p>책리스트</p>
+    {% for book in books %}
+        {{ book.title }}
+    {% endfor %}
+{% endblock contents %}
