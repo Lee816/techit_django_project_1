@@ -11,13 +11,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import os, json
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-with open(os.path.join(BASE_DIR, "secret.json")) as f:
-    secrets = json.loads(f.read())
 
 
 # Quick-start development settings - unsuitable for production
@@ -63,7 +60,7 @@ ROOT_URLCONF = 'book_rental_system.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,9 +82,9 @@ WSGI_APPLICATION = 'book_rental_system.wsgi.application'
 DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": secrets["DB_NAME"],
-        "USER": secrets["DB_USER"],
-        "PASSWORD": secrets["DB_PASSWORD"],
+        "NAME": 'track_db',
+        "USER": 'track',
+        "PASSWORD": "1234",
     }
 }
 

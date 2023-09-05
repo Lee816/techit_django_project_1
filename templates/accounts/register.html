@@ -1,0 +1,5 @@
+<form method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <p><input type="submit" value="{% if request.user.is_authenticated %}Update{% else %}Register{% endif %}"></p>
+</form>

@@ -1,0 +1,11 @@
+{% block contents %}
+    메인화면 {{ request.user.username }}
+    {% if request.user.is_authenticated %}
+        <p><a href="{% url 'accounts:logout' %}">Logout</a></p>
+        <p><a href="{% url 'accounts:update' %}">Update</a></p>
+        <p><a href="{% url 'accounts:changePW' %}">ChangePW</a></p>
+    {% else %}
+        <p><a href="{% url 'accounts:register' %}">Register</a></p>
+        <p><a href="{% url 'accounts:login' %}">Login</a></p>
+    {% endif %}
+{% endblock contents %}
