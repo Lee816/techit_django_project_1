@@ -1,3 +1,5 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from django.shortcuts import render , get_object_or_404
 from django.views import generic
 
@@ -14,3 +16,11 @@ class BookDetail(generic.DetailView):
     pk_url_kwarg = 'book_id'
     context_object_name = 'book'
     template_name = 'books/book_detail.html'
+    
+class RentalBooksList(generic.ListView):
+    model = Books_rental
+    context_object_name = 'rental_books'
+    template_name = 'books/rental_list.html'
+    
+    def get_queryset(self):
+        return Books_rental.objects.filter(user=self.request.user)

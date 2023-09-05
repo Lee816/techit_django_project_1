@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+    <p>대여리스트</p>
+    {% for rental in rental_books %}
+        <a href="{% url 'books:book_detail' rental.book.id %}">{{ rental.book.title }}</a>
+    {% endfor %}
+{% endblock contents %}
