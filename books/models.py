@@ -18,6 +18,7 @@ class Book(models.Model):
     publisher = models.CharField(max_length=200)
     stock = models.IntegerField(default=0)
     summary = models.TextField()
+    like = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title
