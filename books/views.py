@@ -61,13 +61,15 @@ def BookReturn(request, book_id):
         book = get_object_or_404(Book, id=book_id)
         rental_book = get_object_or_404(Books_rental, book=book, user=request.user)
         book.stock += 1
-        rental_book.delete()
+        rental_book.book_return = True
+        book.save()
+        rental_book.save()
         return redirect('books:books_list')
 
 @login_required
 def BookReturnList(request):
-    rental_books = Books_rental.objects.filter(book_return=True)
-    return render(request, 'books/return_list.html', {'rental_books':rental_books})
+    rental_books = Books_rental.objects.filter(book_return=False)
+    return render(request, 'books/not_return_list.html', {'rental_books':rental_books})
 
 def BookSearch(request):
     if request.method == 'POST':

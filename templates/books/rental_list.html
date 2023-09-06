@@ -6,6 +6,10 @@
         {% if not rental.book_return %}
             <a href="{% url 'books:book_detail' rental.book.id %}">{{ rental.book.title }}</a>
             {{ rental.rental_date }} ~ {{ rental.return_date }}
+            <form action="{% url 'books:book_return' rental.book.id %}" method="post">
+                {% csrf_token %}
+                <p><input type="submit" value="Return"></p>
+            </form>
         {% endif %}
     {% endfor %}
 {% endblock contents %}
