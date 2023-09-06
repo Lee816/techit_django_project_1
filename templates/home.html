@@ -1,16 +1,6 @@
-{% block contents %}
-    메인화면 {{ request.user.username }}
-    {% if request.user.is_authenticated %}
-        <p><a href="{% url 'accounts:logout' %}">Logout</a></p>
-        <p><a href="{% url 'accounts:update' %}">Update</a></p>
-        <p><a href="{% url 'accounts:changePW' %}">ChangePW</a></p>
-    {% else %}
-        <p><a href="{% url 'accounts:register' %}">Register</a></p>
-        <p><a href="{% url 'accounts:login' %}">Login</a></p>
-    {% endif %}
-    <p><a href="{% url 'books:books_list' %}">Books List</a></p>
-    <p><a href="{% url 'books:my_rentals' %}">My Rental Books List</a></p>
+{% extends 'base.html' %}
 
+{% block contents %}
     <h1>최근 도서</h1>
     {% for book in latest_books %}
         {{ book.title }}

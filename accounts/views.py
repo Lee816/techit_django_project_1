@@ -21,7 +21,7 @@ def RegisterUser(request):
             user.set_password(request.POST['password']) # 비밀번호 암호화
             user.save()
             login(request, user)
-            return redirect('books:home')
+            return redirect('home')
     else: # 회원가입 페이지 연결
         form = UserRegisterForm()
     return render(request, 'accounts/register.html',{'form':form})
@@ -29,7 +29,7 @@ def RegisterUser(request):
 # 로그아웃
 def LogoutUser(request) :
     logout(request)
-    return redirect('books:home')
+    return redirect('home')
 
 # 로그인 
 def LoginUser(request):
@@ -38,7 +38,7 @@ def LoginUser(request):
         form = UserLoginForm(request,request.POST)
         if form.is_valid() :
             login(request, form.get_user())
-            return redirect('books:home')
+            return redirect('home')
     else:
         form = UserLoginForm()
     return render(request, 'accounts/login.html', {'form' : form})
@@ -60,7 +60,7 @@ def UpdateUser(request):
         form = UserUpdateForm(request.POST, instance=request.user)
         if form.is_valid():
             form.save()
-            return redirect('books:home')
+            return redirect('home')
     else:
         form = UserUpdateForm(instance=request.user)
     return render(request, 'accounts/register.html', {'form':form})
@@ -75,7 +75,7 @@ def ChangePWUser(request):
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.user)
-            return redirect('books:home')
+            return redirect('home')
     else:
         form = PasswordChangeForm(request.user)
     return render(request, 'accounts/register.html', {'form':form})
