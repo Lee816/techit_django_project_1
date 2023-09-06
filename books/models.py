@@ -19,6 +19,7 @@ class Book(models.Model):
     stock = models.IntegerField(default=0)
     summary = models.TextField()
     like = models.IntegerField(default=0)
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title

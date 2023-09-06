@@ -10,7 +10,9 @@ from .models import Book, Books_rental
 # Create your views here.
 
 def HomePage(request):
-    return render(request, 'home.html')
+    latest_books = Book.objects.all().order_by('-created')[:10]
+    like_books = Book.objects.all().order_by('like')[:10]
+    return render(request, 'home.html',{'latest_books':latest_books,'like_books':like_books})
 
 class BooksList(LoginRequiredMixin, generic.ListView):
     model = Book

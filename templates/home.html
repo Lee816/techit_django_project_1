@@ -10,4 +10,14 @@
     {% endif %}
     <p><a href="{% url 'books:books_list' %}">Books List</a></p>
     <p><a href="{% url 'books:my_rentals' %}">My Rental Books List</a></p>
+
+    <h1>최근 도서</h1>
+    {% for book in latest_books %}
+        {{ book.title }}
+    {% endfor %}
+
+    <h1>인기 도서</h1>
+    {% for book in like_books %}
+        {{ book.title }}
+    {% endfor %}
 {% endblock contents %}
