@@ -57,7 +57,7 @@ def BookRent(request, book_id):
             book.stock -= 1
             book.like += 1
             book.save()
-            return redirect('books:books_list')
+            return redirect('books:my_rentals')
         else:
             raise ValueError('대여 불가능')
 

@@ -8,7 +8,7 @@ admin.site.register(Category)
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-    list_display = ['title','category','author','stock']
+    list_display = ['title','category','author','stock','created']
     list_filter = ['author']
     search_fields = ['title','author']
 

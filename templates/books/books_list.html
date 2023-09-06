@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block contents %}
-    <p>책리스트</p><a href="{% url 'books:my_rentals' %}">my_rentals</a><br>
+    <p>책리스트</p>
     {% for book in books %}
-        <a href="{% url 'books:book_detail' book.id %}">{{ book.title }}</a>
+        <a href="{% url 'books:book_detail' book.id %}">{{ book.title }}</a><br>
     {% endfor %}
     <a href="{% url 'books:book_search' %}">search</a>
 {% endblock contents %}
