@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils import timezone, dates
 
 from accounts.models import User
 
@@ -25,8 +24,8 @@ class Book(models.Model):
         return self.title
     
 class Books_rental(models.Model):
-    rental_date = models.DateField(default=timezone.now())
-    return_date = models.DateField(default=timezone.now()+timezone.timedelta(weeks=1))
+    rental_date = models.DateField()
+    return_date = models.DateField()
     book = models.ForeignKey(Book, related_name='rentals', on_delete=models.CASCADE)
     user = models.ForeignKey(User, related_name='rental_books', on_delete=models.CASCADE)
     book_return = models.BooleanField(default=False)

@@ -1,3 +1,4 @@
+from django.utils import timezone
 from django.db.models import Q
 from django.urls import reverse_lazy
 from django.views import generic
@@ -52,7 +53,7 @@ def BookRent(request, book_id):
     else:
         book = get_object_or_404(Book, id=book_id)
         if book.stock > 0 :
-            Books_rental.objects.create(user=request.user,book=book)
+            Books_rental.objects.create(user=request.user,book=book,rental_date=timezone.localdate(),return_date=timezone.localdate()+timezone.timedelta(weeks=1))
             book.stock -= 1
             book.like += 1
             book.save()
