@@ -49,6 +49,7 @@ def BookRent(request, book_id):
         if book.stock > 0 :
             Books_rental.objects.create(user=request.user,book=book)
             book.stock -= 1
+            book.like += 1
             book.save()
             return redirect('books:books_list')
         else:
