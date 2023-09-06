@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.urls import reverse_lazy
 from django.views import generic
 from django.shortcuts import get_object_or_404, redirect, render
@@ -67,4 +68,14 @@ def BookReturn(request, book_id):
 def BookReturnList(request):
     rental_books = Books_rental.objects.filter(book_return=True)
     return render(request, 'books/return_list.html', {'rental_books':rental_books})
+
+def BookSearch(request):
+    if request.method == 'POST':
+        word = request.POST['word']
+        books = Book.objects.filter(Q(title__icontains=word)|Q(author__icontains=word))
+        
+        return render(request,'books/books_list.html', {'books' : books})
+    else:
+        return render(request, 'books/search.html')
+    
     
