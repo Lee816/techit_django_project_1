@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+    <h1>반납된 리스트</h1>
+    {% for rental_book in rental_books %}
+        {{ rental_book.book }}
+        <form action="{% url 'books:book_return' rental_book.book.id %}" method="post">
+            {% csrf_token %}
+            <p><input type="submit" value="Return"></p>
+        </form>
+    {% endfor %}
+    <hr>
+    <h1>반납안된 리스트</h1>
+    {% for not_rental_book in not_rental_books %}
+        {{ not_rental_book.book }}
+        <form action="{% url 'books:book_return' not_rental_book.book.id %}" method="post">
+            {% csrf_token %}
+            <p><input type="submit" value="Return"></p>
+        </form>
+    {% endfor %}
+{% endblock contents %}

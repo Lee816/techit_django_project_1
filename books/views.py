@@ -55,7 +55,6 @@ def BookRent(request, book_id):
             raise ValueError('대여 불가능')
 
 @login_required
-@permission_required('books.delete_Books_rental')
 def BookReturn(request, book_id):
     if request.method == 'POST':
         book = get_object_or_404(Book, id=book_id)
@@ -68,8 +67,12 @@ def BookReturn(request, book_id):
 
 @login_required
 def BookReturnList(request):
-    rental_books = Books_rental.objects.filter(book_return=False)
-    return render(request, 'books/not_return_list.html', {'rental_books':rental_books})
+    if request.user.is_superuser:
+        rental_books = Books_rental.objects.filter(book_return=True)
+        not_rental_books = Books_rental.objects.filter(book_return=False)
+        return render(request, 'books/return_list.html', {'rental_books':rental_books,'not_rental_books':not_rental_books})
+    else:
+        return redirect('books:books_list')
 
 def BookSearch(request):
     if request.method == 'POST':
