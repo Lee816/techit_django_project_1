@@ -9,6 +9,10 @@ from .models import Book, Books_rental
 
 # Create your views here.
 
+class HomePage(generic.ListView):
+    model = Book
+    template_name = 'home.html'
+
 class BooksList(LoginRequiredMixin, generic.ListView):
     model = Book
     context_object_name = 'books'
