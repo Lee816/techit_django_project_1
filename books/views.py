@@ -9,9 +9,8 @@ from .models import Book, Books_rental
 
 # Create your views here.
 
-class HomePage(generic.ListView):
-    model = Book
-    template_name = 'home.html'
+def HomePage(request):
+    return render(request, 'home.html')
 
 class BooksList(LoginRequiredMixin, generic.ListView):
     model = Book
