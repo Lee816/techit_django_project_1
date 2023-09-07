@@ -19,7 +19,6 @@ class BooksList(generic.ListView):
     model = Book
     context_object_name = 'books'
     template_name = 'books/books_list.html'
-    redirect_field_name = 'accounts/login'
     
     paginate_by = 10
     
@@ -28,8 +27,7 @@ class BookDetail(generic.DetailView):
     pk_url_kwarg = 'book_id'
     context_object_name = 'book'
     template_name = 'books/book_detail.html'
-    redirect_field_name = 'accounts/login'
-    
+
 class BookCreate(LoginRequiredMixin, PermissionRequiredMixin, generic.CreateView):
     model = Book
     fields = '__all__'

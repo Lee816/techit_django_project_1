@@ -18,9 +18,20 @@
         <div class="border-end bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading border-bottom bg-light"><a class='fw-bold text-decoration-none text-black' href="{% url 'home' %}">Library</a></div>
             <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'books:books_list' %}">Books List</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
+                <div class="btn-group dropend">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3 " href="{% url 'books:books_list' %}">Books List</a>
+                    {% block category %}
+                    <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                    <ul class="dropdown-menu">
+                        <!-- Dropdown menu links -->
+                        {% for category in categories %}
+                            <li><a class="dropdown-item" href="#">{{ category.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endblock category %}
+                </div>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Menu1</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Menu2</a>
                 {% if request.user.is_superuser %}
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'books:book_create' %}">Books Add</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'books:return_books' %}">Not Return List</a>
