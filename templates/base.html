@@ -21,8 +21,10 @@
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'books:books_list' %}">Books List</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+                {% if request.user.is_superuser %}
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'books:book_create' %}">Books Add</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'books:return_books' %}">Return List</a>
+                {% endif %}
                 <form class='d-flex flex-row mt-2' method="POST" action="{% url 'books:book_search' %}">
                     {% csrf_token %}        
                     <input class="form-control me-2" type="search" placeholder="Search" name="word" aria-label="Search">
