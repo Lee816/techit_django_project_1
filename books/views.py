@@ -21,7 +21,7 @@ class BooksList(generic.ListView):
     template_name = 'books/books_list.html'
     redirect_field_name = 'accounts/login'
     
-    paginate_by = 5
+    paginate_by = 10
     
 class BookDetail(generic.DetailView):
     model = Book
@@ -89,7 +89,5 @@ def BookSearch(request):
         books = Book.objects.filter(Q(title__icontains=word)|Q(author__icontains=word))
         
         return render(request,'books/books_list.html', {'books' : books})
-    else:
-        return render(request, 'books/search.html')
     
     

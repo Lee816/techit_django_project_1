@@ -24,6 +24,11 @@
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+                <form class='d-flex flex-row mt-2' method="POST" action="{% url 'books:book_search' %}">
+                    {% csrf_token %}        
+                    <input class="form-control me-2" type="search" placeholder="Search" name="word" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"> Search </button>
+                </form>
             </div>
         </div>
         <!-- Page content wrapper-->
