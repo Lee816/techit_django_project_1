@@ -8,7 +8,7 @@
     <div class="offcanvas offcanvas-start show" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasLabel">{% if request.user.is_authenticated %}Update{% else %}Register{% endif %}</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <a href="{% url 'home' %}"><button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button></a>
         </div>
         <hr>
         <div class="offcanvas-body">
