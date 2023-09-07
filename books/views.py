@@ -15,13 +15,13 @@ def HomePage(request):
     like_books = Book.objects.all().order_by('like')[:10]
     return render(request, 'home.html',{'latest_books':latest_books,'like_books':like_books})
 
-class BooksList(LoginRequiredMixin, generic.ListView):
+class BooksList(generic.ListView):
     model = Book
     context_object_name = 'books'
     template_name = 'books/books_list.html'
     redirect_field_name = 'accounts/login'
     
-class BookDetail(LoginRequiredMixin, generic.DetailView):
+class BookDetail(generic.DetailView):
     model = Book
     pk_url_kwarg = 'book_id'
     context_object_name = 'book'
