@@ -5,5 +5,5 @@
     {% for book in books %}
         <a href="{% url 'books:book_detail' book.id %}">{{ book.title }}</a><br>
     {% endfor %}
-    <a href="{% url 'books:book_search' %}">search</a>
+    {% include 'pagination.html' %}
 {% endblock contents %}

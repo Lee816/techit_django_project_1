@@ -21,6 +21,8 @@ class BooksList(generic.ListView):
     template_name = 'books/books_list.html'
     redirect_field_name = 'accounts/login'
     
+    paginate_by = 5
+    
 class BookDetail(generic.DetailView):
     model = Book
     pk_url_kwarg = 'book_id'
