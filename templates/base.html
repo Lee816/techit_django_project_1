@@ -23,7 +23,7 @@
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
                 {% if request.user.is_superuser %}
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'books:book_create' %}">Books Add</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'books:return_books' %}">Return List</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'books:return_books' %}">Not Return List</a>
                 {% endif %}
                 <form class='d-flex flex-row mt-2' method="POST" action="{% url 'books:book_search' %}">
                     {% csrf_token %}        

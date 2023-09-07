@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+    <h1>연체 도서</h1>
+    {% for not_rental_book in not_rental_books %}
+        {{ not_rental_book.book }} - {{ not_rental_book.user }} - {{ not_rental_book.return_date }}
+    {% endfor %}
+{% endblock contents %}

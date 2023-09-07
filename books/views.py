@@ -77,9 +77,8 @@ def BookReturn(request, book_id):
 @login_required
 def BookReturnList(request):
     if request.user.is_superuser:
-        rental_books = Books_rental.objects.filter(book_return=True)
-        not_rental_books = Books_rental.objects.filter(book_return=False)
-        return render(request, 'books/return_list.html', {'rental_books':rental_books,'not_rental_books':not_rental_books})
+        not_rental_books = Books_rental.objects.filter(book_return=False, return_date__lt=timezone.localdate())
+        return render(request, 'books/not_return_list.html', {'not_rental_books':not_rental_books})
     else:
         return redirect('books:books_list')
 
