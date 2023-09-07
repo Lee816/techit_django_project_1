@@ -22,6 +22,10 @@ class BooksList(generic.ListView):
     
     paginate_by = 10
     
+def CategoryBooksList(request, category_id):
+    books = Book.objects.filter(category=category_id)
+    return render(request, 'books/books_list.html', {'books':books})
+    
 class BookDetail(generic.DetailView):
     model = Book
     pk_url_kwarg = 'book_id'

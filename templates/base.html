@@ -25,7 +25,7 @@
                     <ul class="dropdown-menu">
                         <!-- Dropdown menu links -->
                         {% for category in categories %}
-                            <li><a class="dropdown-item" href="#">{{ category.name }}</a></li>
+                            <li><a class="dropdown-item" href="{% url 'books:category_books_list' category.id %}">{{ category.name }}</a></li>
                         {% endfor %}
                     </ul>
                 {% endblock category %}
