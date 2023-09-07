@@ -11,19 +11,15 @@ class UserRegisterForm(forms.ModelForm):
         fields = ['phone','username','email','password']
         widgets = {
         'email': forms.EmailInput(attrs={
-            'placeholder': '이메일',
             'class' : 'inputform',
             }),
         'password': forms.PasswordInput(attrs={
-            'placeholder': '비밀번호',
             'class' : 'inputform',
             }),
         'username': forms.TextInput(attrs={
-            'placeholder': '이름',
             'class' : 'inputform',
             }),
         'phone': forms.TextInput(attrs={
-            'placeholder': '휴대폰번호',
             'class' : 'inputform',
             }),
     }
@@ -36,15 +32,12 @@ class UserUpdateForm(UserChangeForm):
         fields = ['email', 'username','phone']
         widgets = {
         'email': forms.EmailInput(attrs={
-            'placeholder': '이메일',
             'class' : 'inputform',
             }),
         'username': forms.TextInput(attrs={
-            'placeholder': '이름',
             'class' : 'inputform',
             }),
         'phone': forms.TextInput(attrs={
-            'placeholder': '휴대폰번호',
             'class' : 'inputform',
             }),
         }
@@ -62,8 +55,8 @@ class UsernameField(forms.CharField):
         }
 
 class UserLoginForm(AuthenticationForm):
-    username = UsernameField(widget=forms.TextInput(attrs={"autofocus": True,'placeholder':'휴대폰번호'}))
+    username = UsernameField(widget=forms.TextInput(attrs={"autofocus": True}))
     password = forms.CharField(
         strip=False,
-        widget=forms.PasswordInput(attrs={"autocomplete": "current-password",'placeholder':'비밀번호'}),
+        widget=forms.PasswordInput(attrs={"autocomplete": "current-password"}),
     )
