@@ -13,9 +13,37 @@
         <hr>
         <div class="offcanvas-body">
             <form method="post">
-                {{ form.as_p }}
+                {% for field, errors in form.errors.items %}
+                    <ul class="errorlist">
+                    {% for error in errors %}
+                        <li class='alert alert-danger'>{{ error }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endfor %}
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Name</label>
+                    <br>
+                    {{ form.username }}
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+                    <br>
+                    {{ form.email }}
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Phone</label>
+                    <br>
+                    {{ form.phone }}
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Password</label>
+                    <br>
+                    {{ form.password }}
+                </div>
                 {% csrf_token %}
-                <p><input class='btn btn-outline-dark' type="submit" value="{% if request.user.is_authenticated %}Update{% else %}Register{% endif %}"></p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <p><input class='btn btn-outline-dark' type="submit" value="{% if request.user.is_authenticated %}Update{% else %}Register{% endif %}"></p>
+                </div>
             </form>
         </div>
     </div>

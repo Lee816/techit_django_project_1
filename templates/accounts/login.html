@@ -13,10 +13,17 @@
         <hr>
         <div class="offcanvas-body">
             <form action="{% url 'accounts:login' %}" method="post">
+                {% for field, errors in form.errors.items %}
+                    <ul class="errorlist">
+                    {% for error in errors %}
+                        <li class='alert alert-danger'>{{ error }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endfor %}
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Phone</label>
                     <br>
-                    {{ form.username }}
+                    {{ form.phone }}
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Password</label>
@@ -25,7 +32,6 @@
                 </div>
                 {% csrf_token %}
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <input type="hidden" name="next" value='{{ next }}'>
                     <p><input class='btn btn-outline-dark' type="submit" value="Log-in"></p>
                 </div>
             </form>
