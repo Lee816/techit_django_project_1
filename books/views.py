@@ -6,7 +6,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.decorators import login_required, permission_required
 
-from .models import Book, Books_rental
+from .models import Book, Books_rental, Category
 
 # Create your views here.
 
@@ -24,7 +24,8 @@ class BooksList(generic.ListView):
     
 def CategoryBooksList(request, category_id):
     books = Book.objects.filter(category=category_id)
-    return render(request, 'books/books_list.html', {'books':books})
+    category = get_object_or_404(Category, id=category_id)
+    return render(request, 'books/books_list.html', {'books':books, 'category':category})
     
 class BookDetail(generic.DetailView):
     model = Book
