@@ -1,4 +1,4 @@
-[첫 번째 미션](https://likelion.notion.site/a39c371947944c3596655245392dc905){:target="_blank"}
+[첫 번째 미션](https://likelion.notion.site/a39c371947944c3596655245392dc905)
 
 # 테스트 방법
 
@@ -40,20 +40,20 @@
 - Not Return List - 대여기간이 지나 연체된 도서 목록과 대여한 사람을 볼 수 있다.
 
 ## UI 링크
-1. [회원가입](http://127.0.0.1:8000/accounts/register/){:target="_blank"}
-2. [로그인](http://127.0.0.1:8000/accounts/login/){:target="_blank"}
-3. [회원정보변경](http://127.0.0.1:8000/accounts/update/){:target="_blank"}
-4. [비밀번호변경](http://127.0.0.1:8000/accounts/changePW/){:target="_blank"}
-5. [로그아웃](http://127.0.0.1:8000/accounts/logout/){:target="_blank"}
-6. [메인페이지](http://127.0.0.1:8000/){:target="_blank"}
-7. [도서목록](http://127.0.0.1:8000/books/list/){:target="_blank"}
-8. [카테고리도서목록](http://127.0.0.1:8000/books/list/1/){:target="_blank"}
-9. [도서상세사항](http://127.0.0.1:8000/books/1/detail/){:target="_blank"}
-10. [도서대여](http://127.0.0.1:8000/books/1/rent/){:target="_blank"}
-11. [나의대여목록](http://127.0.0.1:8000/books/my_rentals/){:target="_blank"}
-12. [검색(검색내용: the)](http://127.0.0.1:8000/books/search/?word=the){:target="_blank"}
-13. [도서추가](http://127.0.0.1:8000/books/create/){:target="_blank"}
-14. [연체도서목록](http://127.0.0.1:8000/books/return_books/){:target="_blank"}
+1. [회원가입](http://127.0.0.1:8000/accounts/register/)
+2. [로그인](http://127.0.0.1:8000/accounts/login/)
+3. [회원정보변경](http://127.0.0.1:8000/accounts/update/)
+4. [비밀번호변경](http://127.0.0.1:8000/accounts/changePW/)
+5. [로그아웃](http://127.0.0.1:8000/accounts/logout/)
+6. [메인페이지](http://127.0.0.1:8000/)
+7. [도서목록](http://127.0.0.1:8000/books/list/)
+8. [카테고리도서목록](http://127.0.0.1:8000/books/list/1/)
+9. [도서상세사항](http://127.0.0.1:8000/books/1/detail/)
+10. [도서대여](http://127.0.0.1:8000/books/1/rent/)
+11. [나의대여목록](http://127.0.0.1:8000/books/my_rentals/)
+12. [검색(검색내용: the)](http://127.0.0.1:8000/books/search/?word=the)
+13. [도서추가](http://127.0.0.1:8000/books/create/)
+14. [연체도서목록](http://127.0.0.1:8000/books/return_books/)
 
 
 ### POSTGRESQL 사용시 생성법
