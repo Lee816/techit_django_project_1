@@ -368,11 +368,11 @@
     "pk": 17,
     "fields": {
       "category": 16,
-      "title": "To Kill a Mockingbird",
+      "title": "To Kill a Mockingbird 2",
       "author": "Harper Lee",
       "publisher": "J. B. Lippincott & Co.",
       "stock": 5,
-      "summary": "To Kill a Mockingbird is a novel by Harper Lee published in 1960. It won the Pulitzer Prize and was adapted into an Academy Award-winning film in 1962. The novel is set in the fictional town of Maycomb, Alabama, during the Great Depression. It tells the story of Jean Louise 'Scout' Finch and her brother, Jeremy Atticus 'Jem' Finch, as they come of",
+      "summary": "To Kill a Mockingbird 2 is a novel by Harper Lee published in 1960. It won the Pulitzer Prize and was adapted into an Academy Award-winning film in 1962. The novel is set in the fictional town of Maycomb, Alabama, during the Great Depression. It tells the story of Jean Louise 'Scout' Finch and her brother, Jeremy Atticus 'Jem' Finch, as they come of",
       "like": 10,
       "created": "2023-09-06T08:03:24.133Z"
     }
@@ -466,11 +466,11 @@
     "pk": 24,
     "fields": {
       "category": 16,
-      "title": "The Lord of the Flies",
+      "title": "The Lord of the Flies 2",
       "author": "William Golding",
       "publisher": "Faber and Faber",
       "stock": 5,
-      "summary": "The Lord of the Flies is a 1954 novel by British writer William Golding. The story follows a group of British boys who are stranded on an uninhabited island following a plane crash. The boys are initially excited and free, but they soon descend into savagery and violence. The novel is an exploration of the dark side of human nature and the dangers of power.",
+      "summary": "The Lord of the Flies 2 is a 1954 novel by British writer William Golding. The story follows a group of British boys who are stranded on an uninhabited island following a plane crash. The boys are initially excited and free, but they soon descend into savagery and violence. The novel is an exploration of the dark side of human nature and the dangers of power.",
       "like": 5,
       "created": "2023-09-06T08:10:24.133Z"
     }
@@ -480,7 +480,7 @@
     "pk": 25,
     "fields": {
       "category": 12,
-      "title": "The Hobbit",
+      "title": "The Hobbit 2",
       "author": "J.R.R. Tolkien",
       "publisher": "George Allen & Unwin",
       "stock": 5,
