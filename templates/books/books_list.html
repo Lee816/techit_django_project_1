@@ -3,6 +3,8 @@
 {% block contents %}
     {% if category %}
         <h5> {{ category.name }} Books List</h5>
+    {% elif word %}
+        <h5> {{ word }} Books List</h5>
     {% else %}
         <h5>All Books List</h5>
     {% endif %}

@@ -5,7 +5,7 @@ from django.views import generic
 from django.shortcuts import get_object_or_404, redirect, render ,get_list_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.decorators import login_required, permission_required
-import ctypes
+from django.core.paginator import Paginator
 
 from .models import Book, Books_rental, Category
 
@@ -87,10 +87,20 @@ def BookReturnList(request):
         return redirect('books:books_list')
 
 def BookSearch(request):
-    if request.method == 'POST':
-        word = request.POST['word']
-        books = Book.objects.filter(Q(title__icontains=word)|Q(author__icontains=word))
-        
-        return render(request,'books/books_list.html', {'books' : books})
+    word = request.GET.get('word')
+    print(word)
+    books = Book.objects.filter(Q(title__icontains=word)|Q(author__icontains=word))
     
+    paginator = Paginator(books, 5)
+    
+    page_number = request.GET.get('page', 1)
+    page = paginator.get_page(page_number)
+
+    return render(request, 'books/books_list.html', {
+        'word': word,
+        'books': page.object_list,
+        'page_obj': page,
+        'paginator': paginator,
+    })
+
     
