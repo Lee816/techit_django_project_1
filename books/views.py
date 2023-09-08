@@ -36,7 +36,7 @@ class BookDetail(generic.DetailView):
 
 class BookCreate(LoginRequiredMixin, PermissionRequiredMixin, generic.CreateView):
     model = Book
-    fields = '__all__'
+    fields = ['category','title','author','publisher','stock','summary']
     context_object_name = 'form'
     redirect_field_name = 'accounts:login'
     template_name = 'books/book_create.html'
