@@ -278,5 +278,215 @@
       "like": 0,
       "created": "2023-09-03T07:57:24.133Z"
     }
+  },
+  {
+    "model": "books.book",
+    "pk": 11,
+    "fields": {
+      "category": 10,
+      "title": "The Metamorphosis",
+      "author": "Franz Kafka",
+      "publisher": "Kurt Wolff Verlag",
+      "stock": 10,
+      "summary": "The Metamorphosis is a novella by Franz Kafka, first published in 1915. The story, which is written in the first person, follows Gregor Samsa, a travelling salesman who wakes up one morning to find himself transformed into a giant insect. Gregor is initially horrified by his transformation, but he eventually comes to accept his new form. The novella explores themes of alienation, isolation, and the absurdity of life.",
+      "like": 10,
+      "created": "2023-09-06T07:58:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 12,
+    "fields": {
+      "category": 11,
+      "title": "The Lord of the Flies",
+      "author": "William Golding",
+      "publisher": "Faber and Faber",
+      "stock": 5,
+      "summary": "The Lord of the Flies is a 1954 novel by British writer William Golding. The story follows a group of British boys who are stranded on an uninhabited island following a plane crash. The boys are initially excited and free, but they soon descend into savagery and violence. The novel is an exploration of the dark side of human nature and the dangers of power.",
+      "like": 5,
+      "created": "2023-09-06T07:59:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 13,
+    "fields": {
+      "category": 12,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "publisher": "George Allen & Unwin",
+      "stock": 5,
+      "summary": "The Hobbit, or There and Back Again is a fantasy novel by J. R. R. Tolkien. It was published in 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic of children's literature.",
+      "like": 5,
+      "created": "2023-09-06T08:00:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 14,
+    "fields": {
+      "category": 13,
+      "title": "The Handmaid's Tale",
+      "author": "Margaret Atwood",
+      "publisher": "Hamish Hamilton",
+      "stock": 10,
+      "summary": "The Handmaid's Tale is a dystopian novel by Canadian author Margaret Atwood. It was first published in 1985. The story is set in a future where the United States has become a totalitarian theocracy called Gilead. In Gilead, women are divided into three classes: Handmaids, who are forced to bear children for the ruling class; Wives, who are the wives of the ruling class; and Econowives, who are the wives of the lower class. The novel follows Offred, a Handmaid who is forced to live in a household with a Commander and his Wife. Offred must navigate the dangers of Gilead and find a way to escape.",
+      "like": 10,
+      "created": "2023-09-06T08:01:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 15,
+    "fields": {
+      "category": 14,
+      "title": "1984",
+      "author": "George Orwell",
+      "publisher": "Secker & Warburg",
+      "stock": 5,
+      "summary": "Nineteen Eighty-Four is a dystopian political novel by English novelist George Orwell. It was published in 1949 and is widely regarded as one of the greatest works of dystopian literature. The novel is set in Airstrip One, a province of Oceania, a totalitarian state that is constantly at war with its neighbours. The protagonist, Winston Smith, is a man who works for the Thought Police, which is responsible for enforcing the Party's ideology. Winston begins to question the Party's control and starts a secret diary. He is eventually caught by the Thought Police and tortured into submission.",
+      "like": 5,
+      "created": "2023-09-06T08:02:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 16,
+    "fields": {
+      "category": 15,
+      "title": "The Giver",
+      "author": "Lois Lowry",
+      "publisher": "Houghton Mifflin",
+      "stock": 10,
+      "summary": "The Giver is a science fiction novel by American writer Lois Lowry. It was published in 1993 and won the 1994 Newbery Medal. The novel is set in a seemingly utopian community where everyone is assigned a role and there is no pain or suffering. Jonas is a young man who is chosen to be the Receiver of Memory, the only person in the community who knows about the true history and pain of the world. Jonas must learn to keep the memories a secret and decide whether he wants to stay in the community or leave.",
+      "like": 10,
+      "created": "2023-09-06T08:03:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 17,
+    "fields": {
+      "category": 16,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "publisher": "J. B. Lippincott & Co.",
+      "stock": 5,
+      "summary": "To Kill a Mockingbird is a novel by Harper Lee published in 1960. It won the Pulitzer Prize and was adapted into an Academy Award-winning film in 1962. The novel is set in the fictional town of Maycomb, Alabama, during the Great Depression. It tells the story of Jean Louise 'Scout' Finch and her brother, Jeremy Atticus 'Jem' Finch, as they come of",
+      "like": 10,
+      "created": "2023-09-06T08:03:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 18,
+    "fields": {
+      "category": 17,
+      "title": "The Color Purple",
+      "author": "Alice Walker",
+      "publisher": "Harcourt Brace Jovanovich",
+      "stock": 10,
+      "summary": "The Color Purple is a novel by American author Alice Walker. It was published in 1982 and won the Pulitzer Prize for Fiction in 1983. The novel is set in the American South during the early 20th century. It tells the story of Celie, a young black woman who is abused by her husband and father. Celie finds solace in the letters she writes to God and in her relationship with Shug Avery, a blues singer.",
+      "like": 10,
+      "created": "2023-09-06T08:04:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 19,
+    "fields": {
+      "category": 18,
+      "title": "Their Eyes Were Watching God",
+      "author": "Zora Neale Hurston",
+      "publisher": "J.B. Lippincott",
+      "stock": 5,
+      "summary": "Their Eyes Were Watching God is a novel by Zora Neale Hurston, first published in 1937. It is the story of Janie Crawford, a young black woman who is raised by her grandmother in rural Florida. Janie is married twice, first to an abusive farmer named Logan Killicks, and then to a wealthy man named Joe Starks. Janie eventually leaves Joe and finds love with Tea Cake Woods, a poor sharecropper.",
+      "like": 5,
+      "created": "2023-09-06T08:05:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 20,
+    "fields": {
+      "category": 19,
+      "title": "The Kite Runner",
+      "author": "Khaled Hosseini",
+      "publisher": "Riverhead Books",
+      "stock": 10,
+      "summary": "The Kite Runner is a novel by Khaled Hosseini, first published in 2003. It is set in Afghanistan before and after the Soviet invasion. The novel tells the story of Amir, a young boy from a wealthy family, and Hassan, his Hazara friend who is the son of his father's servant. Amir is forced to confront his own prejudices and shortcomings as he tries to make amends for his past mistakes.",
+      "like": 10,
+      "created": "2023-09-06T08:06:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 21,
+    "fields": {
+      "category": 20,
+      "title": "The Fault in Our Stars",
+      "author": "John Green",
+      "publisher": "Dutton Books",
+      "stock": 5,
+      "summary": "The Fault in Our Stars is a novel by John Green, first published in 2012. It is a coming-of-age story about two teenagers, Hazel Grace Lancaster and Augustus Waters, who meet at a cancer support group. Hazel is a 16-year-old girl with thyroid cancer that has spread to her lungs. Augustus is a 17-year-old boy who had osteosarcoma but is now in remission. The two fall in love and embark on a journey to Amsterdam to visit the Anne Frank House.",
+      "like": 5,
+      "created": "2023-09-06T08:07:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 22,
+    "fields": {
+      "category": 5,
+      "title": "The Book Thief",
+      "author": "Markus Zusak",
+      "publisher": "Knopf Books for Young Readers",
+      "stock": 10,
+      "summary": "The Book Thief is a historical novel by Markus Zusak, first published in 2005. It is set in Nazi Germany during World War II. The novel tells the story of Liesel Meminger, a young girl who is sent to live with foster parents in Molching, a small town outside of Munich. Liesel is an avid reader, and she begins to steal books from Nazi book burnings. She shares the books with her friend, Max Vandenburg, a Jewish boy hiding from the Nazis.",
+      "like": 10,
+      "created": "2023-09-06T08:08:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 23,
+    "fields": {
+      "category": 4,
+      "title": "The Curious Incident of the Dog in the Night-Time",
+      "author": "Mark Haddon",
+      "publisher": "Doubleday",
+      "stock": 5,
+      "summary": "The Curious Incident of the Dog in the Night-Time is a novel by Mark Haddon, first published in 2003. It is told in the first person from the perspective of Christopher John Francis Boone, a 15-year-old boy with autism. Christopher is trying to solve the mystery of who killed his neighbor's dog, Wellington. As he investigates the crime, he learns more about himself and the world around him.",
+      "like": 5,
+      "created": "2023-09-06T08:09:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 24,
+    "fields": {
+      "category": 16,
+      "title": "The Lord of the Flies",
+      "author": "William Golding",
+      "publisher": "Faber and Faber",
+      "stock": 5,
+      "summary": "The Lord of the Flies is a 1954 novel by British writer William Golding. The story follows a group of British boys who are stranded on an uninhabited island following a plane crash. The boys are initially excited and free, but they soon descend into savagery and violence. The novel is an exploration of the dark side of human nature and the dangers of power.",
+      "like": 5,
+      "created": "2023-09-06T08:10:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 25,
+    "fields": {
+      "category": 12,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "publisher": "George Allen & Unwin",
+      "stock": 5,
+      "summary": "The Hobbit, or There and Back Again is a fantasy novel by J. R. R. Tolkien. It was published in 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic of children's literature.",
+      "like": 5,
+      "created": "2023-09-06T08:11:24.133Z"
+    }
   }
 ]
