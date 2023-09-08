@@ -12,8 +12,8 @@ from .models import Book, Books_rental, Category
 # Create your views here.
 
 def HomePage(request):
-    latest_books = Book.objects.all().order_by('-created')[:10]
-    like_books = Book.objects.all().order_by('like')[:10]
+    latest_books = Book.objects.all().order_by('-created')[:5]
+    like_books = Book.objects.all().order_by('-like')[:10]
     return render(request, 'home.html',{'latest_books':latest_books,'like_books':like_books})
 
 class BooksList(generic.ListView):
