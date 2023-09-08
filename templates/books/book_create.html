@@ -3,7 +3,7 @@
 {% block contents %}
     <h5>Add Book</h5>
     <hr>
-    <form action="{% url 'accounts:login' %}" method="post">
+    <form action="{% url 'accounts:book_create' %}" method="post">
         {% for field, errors in form.errors.items %}
             <ul class="errorlist">
             {% for error in errors %}
