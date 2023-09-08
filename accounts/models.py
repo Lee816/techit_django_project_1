@@ -11,7 +11,7 @@ class User(AbstractUser):
     # 사용 o
     email = models.EmailField(unique=True)
     username = models.CharField(max_length=20,unique=True)
-    phone = models.CharField(unique=True)
+    phone = models.CharField(max_length=15,unique=True)
     created = models.DateTimeField(auto_now_add=True)
 
     # 로그인 id로 사용할 필드
