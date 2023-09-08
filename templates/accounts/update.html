@@ -7,12 +7,12 @@
 {% block contents %}
     <div class="offcanvas offcanvas-start show" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasLabel">Log-in</h5>
+            <h5 class="offcanvas-title" id="offcanvasLabel">{% if request.user.is_authenticated %}Update{% else %}Register{% endif %}</h5>
             <a href="{% url 'home' %}"><button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button></a>
         </div>
         <hr>
         <div class="offcanvas-body">
-            <form action="{% url 'accounts:login' %}" method="post">
+            <form method="post">
                 {% for field, errors in form.errors.items %}
                     <ul class="errorlist">
                     {% for error in errors %}
@@ -21,18 +21,23 @@
                     </ul>
                 {% endfor %}
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Phone</label>
+                    <label for="exampleFormControlInput1" class="form-label">Name</label>
                     <br>
                     {{ form.username }}
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Password</label>
+                    <label for="exampleFormControlInput1" class="form-label">E-mail</label>
                     <br>
-                    {{ form.password }}
+                    {{ form.email }}
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Phone</label>
+                    <br>
+                    {{ form.phone }}
                 </div>
                 {% csrf_token %}
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <p><input class='btn btn-outline-dark' type="submit" value="Log-in"></p>
+                    <p><input class='btn btn-outline-dark' type="submit" value="{% if request.user.is_authenticated %}Update{% else %}Register{% endif %}"></p>
                 </div>
             </form>
         </div>

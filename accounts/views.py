@@ -63,7 +63,7 @@ def UpdateUser(request):
             return redirect('home')
     else:
         form = UserUpdateForm(instance=request.user)
-    return render(request, 'accounts/register.html', {'form':form})
+    return render(request, 'accounts/update.html', {'form':form})
 
 # 유저 비밀번호 변경
 def ChangePWUser(request):
@@ -78,4 +78,4 @@ def ChangePWUser(request):
             return redirect('home')
     else:
         form = PasswordChangeForm(request.user)
-    return render(request, 'accounts/register.html', {'form':form})
+    return render(request, 'accounts/changePW.html', {'form':form})
