@@ -20,7 +20,7 @@ class BooksList(generic.ListView):
     context_object_name = 'books'
     template_name = 'books/books_list.html'
     
-    paginate_by = 10
+    paginate_by = 5
     
 def CategoryBooksList(request, category_id):
     books = Book.objects.filter(category=category_id)
