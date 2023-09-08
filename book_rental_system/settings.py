@@ -82,10 +82,8 @@ WSGI_APPLICATION = 'book_rental_system.wsgi.application'
 
 DATABASES = {
     'default': {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": 'track_db',
-        "USER": 'track',
-        "PASSWORD": "1234",
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
