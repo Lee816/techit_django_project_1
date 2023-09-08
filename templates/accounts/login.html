@@ -13,10 +13,21 @@
         <hr>
         <div class="offcanvas-body">
             <form action="{% url 'accounts:login' %}" method="post">
-                {{ form.as_p }}
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Phone</label>
+                    <br>
+                    {{ form.username }}
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Password</label>
+                    <br>
+                    {{ form.password }}
+                </div>
                 {% csrf_token %}
-                <input type="hidden" name="next" value='{{ next }}'>
-                <p><input class='btn btn-outline-dark' type="submit" value="Log-in"></p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <input type="hidden" name="next" value='{{ next }}'>
+                    <p><input class='btn btn-outline-dark' type="submit" value="Log-in"></p>
+                </div>
             </form>
         </div>
     </div>
