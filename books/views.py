@@ -2,9 +2,10 @@ from django.utils import timezone
 from django.db.models import Q
 from django.urls import reverse_lazy
 from django.views import generic
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import get_object_or_404, redirect, render ,get_list_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.decorators import login_required, permission_required
+from django.http import HttpResponse
 
 from .models import Book, Books_rental, Category
 
@@ -62,7 +63,7 @@ def BookRent(request, book_id):
             book.stock -= 1
             book.like += 1
             book.save()
-            return redirect('books:my_rentals')
+            return redirect('books:books_list')
         else:
             raise ValueError('대여 불가능')
 
@@ -70,12 +71,12 @@ def BookRent(request, book_id):
 def BookReturn(request, book_id):
     if request.method == 'POST':
         book = get_object_or_404(Book, id=book_id)
-        rental_book = get_object_or_404(Books_rental, book=book, user=request.user)
+        rental_book = get_list_or_404(Books_rental, book=book, user=request.user)[0]
         book.stock += 1
         rental_book.book_return = True
         book.save()
         rental_book.save()
-        return redirect('books:books_list')
+        return redirect('books:my_rentals')
 
 @login_required
 def BookReturnList(request):
