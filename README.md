@@ -3,18 +3,22 @@
 # 테스트 방법
 
 ## 서버실행
-1. 가상환경 설치 및 접속 
+1. 깃클론 생성
+   - `git clone https://github.com/likelion-backend-6th/TrackProject_1_Leegeunhan.git`
+   - `cd TrackProject_1_Leegeunhan`
+2. 가상환경 설치 및 접속 
     - `python -m venv venv`
-    - `souce ./venv/Scripts/activate`
-2. 패키지 설치
+    - `source ./venv/Scripts/activate`
+3. 패키지 설치
     - `pip install -r requirements.txt`
-3. 데이터베이스 생성
+4. 데이터베이스 생성
+    - `python manage.py makemigrations`
     - `python manage.py migrate`
-4. 슈퍼유저 생성
+5. 슈퍼유저 생성
     - `python manage.py createsuperuser`
-5. 더미데이터 추가
+6. 더미데이터 추가
     - `python -Xutf8 manage.py loaddata books_data.json`
-6. 서버 실행
+7. 서버 실행
     - `python manage.py runserver`
 
 ## 일반 유저 ( 비로그인 )
