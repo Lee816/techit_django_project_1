@@ -59,7 +59,7 @@ def BookRent(request, book_id):
     else:
         book = get_object_or_404(Book, id=book_id)
         if book.stock > 0 :
-            Books_rental.objects.create(user=request.user,book=book,rental_date=timezone.localdate(),return_date=timezone.localdate()+timezone.timedelta(weeks=1))
+            Books_rental.objects.create(user=request.user,book=book,rental_date=timezone.localdate())
             book.stock -= 1
             book.like += 1
             book.save()
@@ -73,7 +73,7 @@ def BookReturn(request, book_id):
         book = get_object_or_404(Book, id=book_id)
         rental_book = Books_rental.objects.filter(book=book, user=request.user, book_return=False)[0]
         book.stock += 1
-        rental_book.book_return = True
+        rental_book.return_date = timezone.localdate()
         book.save()
         rental_book.save()
     return redirect('books:my_rentals')
@@ -81,10 +81,11 @@ def BookReturn(request, book_id):
 @login_required
 def BookReturnList(request):
     if request.user.is_superuser:
-        not_rental_books = Books_rental.objects.filter(book_return=False, return_date__lt=timezone.localdate())
+        not_rental_books = Books_rental.objects.filter(return_date=None, rental_date__lt=timezone.localdate()+timezone.timedelta(weeks=1))
         return render(request, 'books/not_return_list.html', {'not_rental_books':not_rental_books})
     else:
         return redirect('books:books_list')
+    
 
 def BookSearch(request):
     word = request.GET.get('word')

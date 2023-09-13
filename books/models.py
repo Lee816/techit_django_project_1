@@ -28,10 +28,9 @@ class Book(models.Model):
     
 class Books_rental(models.Model):
     rental_date = models.DateField()
-    return_date = models.DateField()
+    return_date = models.DateField(null=True, blank=True)
     book = models.ForeignKey(Book, related_name='rentals', on_delete=models.CASCADE)
     user = models.ForeignKey(User, related_name='rental_books', on_delete=models.CASCADE)
-    book_return = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.user} rental "{self.book}"'
